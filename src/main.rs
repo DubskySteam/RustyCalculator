@@ -1,4 +1,5 @@
 mod ui;
+mod functionality;
 use ui::create_ui;
 
 fn main() {

@@ -1,4 +1,5 @@
-use dioxus::{prelude::*, html::{body, button, h2}};
+use dioxus::prelude::*;
+use crate::functionality::*;
 
 pub fn create_ui(cx: Scope) -> Element {
     cx.render(
@@ -9,21 +10,6 @@ pub fn create_ui(cx: Scope) -> Element {
             }
         }
         )
-}
-
-fn calc(val: usize, op: usize) -> usize {
-    return 1;
-}
-
-fn eval_math(sum: &usize, num: usize, op: &usize) -> usize {
-    match op {
-        0 => num,
-        1 => sum/num,
-        2 => sum * num,
-        3 => sum + num,
-        4 => sum - num,
-        _ => 0
-    }
 }
 
 fn calculator(cx: Scope) -> Element {
