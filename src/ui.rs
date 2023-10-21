@@ -28,7 +28,13 @@ fn calculator(cx: Scope) -> Element {
                 div {
                     class: "buttons",
                     button {
-                        onclick: move |_| op.set(1),
+                        onclick: move |_| {
+                            if num.read().len() > 0 {
+                                sum.set(num.read().parse::<f64>().unwrap());
+                                num.with_mut(|x| x.clear());
+                            }
+                            op.set(1);
+                        },
                         "/"}
                     button {
                         onclick: move |_| {
@@ -46,7 +52,13 @@ fn calculator(cx: Scope) -> Element {
                         },
                         "9"}
                     button {
-                        onclick: move |_| op.set(2),
+                        onclick: move |_| {
+                            if num.read().len() > 0 {
+                                sum.set(num.read().parse::<f64>().unwrap());
+                                num.with_mut(|x| x.clear());
+                            }
+                            op.set(2);
+                        },
                         "*"}
                     button {
                         onclick: move |_| {
@@ -64,7 +76,13 @@ fn calculator(cx: Scope) -> Element {
                         },
                         "6"}
                     button {
-                        onclick: move |_| op.set(3),
+                        onclick: move |_| {
+                            if num.read().len() > 0 {
+                                sum.set(num.read().parse::<f64>().unwrap());
+                                num.with_mut(|x| x.clear());
+                            }
+                            op.set(3);
+                        },
                         "-"}
                     button {
                         onclick: move |_| {
@@ -86,7 +104,6 @@ fn calculator(cx: Scope) -> Element {
                             if num.read().len() > 0 {
                                 sum.set(num.read().parse::<f64>().unwrap());
                                 num.with_mut(|x| x.clear());
-                                //println!("num: {}", num.read());
                             }
                             op.set(4);
                         },
